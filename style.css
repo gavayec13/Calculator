@@ -13,14 +13,14 @@ body {
 input {
     grid-column: 2/-1;
     text-align: right;
-    font-size: large;
+    font: 40px bold ;
 }
 .btn {
     min-width: 80px;
     min-height: 80px;
     padding: 30px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: larger;
+    font-size: 30px;
 }
 .plus {
     grid-column: 4; 
