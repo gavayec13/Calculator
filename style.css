@@ -4,30 +4,33 @@
 }
 
 body {
-    background: linear-gradient(-60deg, #ff9768 0%, #9156e1 100%);
+    background: linear-gradient(-60deg, #fcbea2 0%, #caabf5 100%);
     font-family: 'Maven Pro', sans-serif;
     font-size: 36px;
 }
 
 .container {
-    max-width: 500px;
-    height: 600px;
-    margin: 90px auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    width: 320px;
+    height: 480px;
+    margin: 30px auto;
+    display: table;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.75);
 }
 
 input {
-    width: 500px;
-    grid-column: 1/-1;
+    width: 300px;
+    height: 60px;
+    padding: 10px;
     border: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     text-align: right;
-    font: 2.5rem bold ;
+    font: 2rem bold ;
 }
 
 .btn {
+    width: 80px;
+    height: 80px;
     padding: 20px;
     font-size: 1.5rem;
     background-image: linear-gradient(to right, #f7f7f7 0%, #d3d3d3 100%);
@@ -42,7 +45,12 @@ input {
 }
 
 .equal {
-    grid-column: 3/-1;
+    width: 160px;
+    border-bottom-right-radius: 5px;
+}
+
+.zero {
+    border-bottom-left-radius: 5px;
 }
 
 
@@ -52,7 +60,7 @@ input {
         font-size: 1rem;
     }
     .container {
-        width: 750px;
+        width: 320px;
     }
     .btn {
         padding: 20px;
@@ -61,12 +69,24 @@ input {
 
 @media (max-width: 375px) {
     * {
-        font-size: 2rem;
+        font-size: 1rem;
     }
     .container {
-        max-width: 100%;
+        width: 300px;
+        height: 450px;
+        margin: 30px auto;
     }
     .btn {
+        width: 75px;
+        height: 75px;
         padding: 15px;
+    }
+    input {
+        width: 280px;
+        height: 75px;
+        padding: 10px;
+    }
+    .equal {
+        width: 150px;
     }
 }
