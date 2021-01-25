@@ -2,6 +2,9 @@
     margin: 0;
     padding: 0;
 }
+html {
+    height: 100%;
+}
 
 body {
     background: linear-gradient(-60deg, #fcbea2 0%, #caabf5 100%);
@@ -14,6 +17,7 @@ body {
     height: 480px;
     margin: 30px auto;
     display: table;
+    border-radius: 5px;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.75);
 }
 
@@ -29,35 +33,63 @@ input {
     text-align: right;
     font-size: 28px;
 }
-:-ms-input-placeholder {
+input::placeholder {
+    color: #fff;
+}
+::-moz-input-placeholder {
     color: #fff;
 }
 ::-webkit-input-placeholder {
     color: #fff;
 }
+
 .btn {
+    background-image: linear-gradient(to right, #f7f7f7 0%, #d3d3d3 100%);
     width: 80px;
     height: 80px;
-    padding: 20px;
-    font-size: 28px;
-    background-image: linear-gradient(to right, #f7f7f7 0%, #d3d3d3 100%);
+    padding: 0;
+    font-size: 24px;
     border: none;
 }
 
 .btn:hover {
-    background-image: linear-gradient(to right, #d4d4d4 0%, #cecece 100%);
-}
-.btn:active {
-    border: none;
-    outline: none;
+    background-image: radial-gradient(ellipse farthest-corner at 50% 50%, #aca48a,rgb(148, 145, 145));
+    border-radius: 5px;
 }
 .btn:focus {
     border: none;
     outline: none;
 }
+.btn:active {
+    border: none;
+    outline: none;
+    font-weight: 900;
+}
+
+.action {
+    background: #9a78c9;
+    color: #f7f7f7;
+}
+.action:hover {
+    color: black;
+}
+
+.clean {
+    width: 160px;
+    background: #b66b6b;
+    color: #f7f7f7;
+}
+.clean:hover span {
+    display: none;
+}
+.clean:hover::before {
+    content: 'Clean';
+    color: black;
+}
 
 .equal {
     width: 160px;
+    background: #ebaf94;
     border-bottom-right-radius: 5px;
 }
 
@@ -65,14 +97,9 @@ input {
     border-bottom-left-radius: 5px;
 }
 
-
-
 @media (max-width: 768px) {
     .container {
         width: 320px;
-    }
-    .btn {
-        padding: 20px;
     }
 }
 
@@ -86,12 +113,14 @@ input {
     .btn {
         width: 75px;
         height: 75px;
-        padding: 15px;
     }
     input {
         width: 280px;
         height: 75px;
         padding: 10px;
+    }
+    .clean {
+        width: 150px;
     }
     .equal {
         width: 150px;
