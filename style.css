@@ -6,7 +6,7 @@
 body {
     background: linear-gradient(-60deg, #fcbea2 0%, #caabf5 100%);
     font-family: 'Maven Pro', sans-serif;
-    font-size: 36px;
+    font-size: 0;
 }
 
 .container {
@@ -24,15 +24,22 @@ input {
     border: none;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    background-color: black;
+    color: #fff;
     text-align: right;
-    font: 2rem bold ;
+    font-size: 28px;
 }
-
+:-ms-input-placeholder {
+    color: #fff;
+}
+::-webkit-input-placeholder {
+    color: #fff;
+}
 .btn {
     width: 80px;
     height: 80px;
     padding: 20px;
-    font-size: 1.5rem;
+    font-size: 28px;
     background-image: linear-gradient(to right, #f7f7f7 0%, #d3d3d3 100%);
     border: none;
 }
@@ -42,6 +49,11 @@ input {
 }
 .btn:active {
     border: none;
+    outline: none;
+}
+.btn:focus {
+    border: none;
+    outline: none;
 }
 
 .equal {
@@ -56,9 +68,6 @@ input {
 
 
 @media (max-width: 768px) {
-    * {
-        font-size: 1rem;
-    }
     .container {
         width: 320px;
     }
@@ -68,9 +77,7 @@ input {
 }
 
 @media (max-width: 375px) {
-    * {
-        font-size: 1rem;
-    }
+
     .container {
         width: 300px;
         height: 450px;
