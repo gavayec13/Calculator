@@ -54,7 +54,6 @@ input::placeholder {
 
 .btn:hover {
     background-image: radial-gradient(ellipse farthest-corner at 50% 50%, #aca48a,rgb(148, 145, 145));
-    border-radius: 5px;
 }
 .btn:focus {
     border: none;
@@ -63,7 +62,8 @@ input::placeholder {
 .btn:active {
     border: none;
     outline: none;
-    font-weight: 900;
+    font-weight: 700;
+    border-radius: 10px;
 }
 
 .action {
@@ -103,8 +103,13 @@ input::placeholder {
     }
 }
 
-@media (max-width: 375px) {
-
+/* @media (max-width: 375px) {
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
     .container {
         width: 300px;
         height: 450px;
@@ -118,6 +123,7 @@ input::placeholder {
         width: 280px;
         height: 75px;
         padding: 10px;
+        margin: 0;
     }
     .clean {
         width: 150px;
@@ -125,4 +131,4 @@ input::placeholder {
     .equal {
         width: 150px;
     }
-}
+} */
