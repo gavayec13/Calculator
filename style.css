@@ -2,8 +2,12 @@
     margin: 0;
     padding: 0;
 }
-html {
+html, body {
     height: 100%;
+    margin-left: calc(100vw - 100%);
+    margin-right: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 body {
@@ -24,6 +28,7 @@ body {
 input {
     width: 300px;
     height: 60px;
+    margin: 0;
     padding: 10px;
     border: none;
     border-top-left-radius: 5px;
@@ -34,13 +39,15 @@ input {
     font-size: 28px;
 }
 input::placeholder {
-    color: #fff;
+    color: white;
 }
-::-moz-input-placeholder {
-    color: #fff;
+input::-moz-placeholder {
+    color: white;
+    opacity: 1;
 }
-::-webkit-input-placeholder {
+input::-webkit-placeholder {
     color: #fff;
+    opacity: 1;
 }
 
 .btn {
@@ -53,7 +60,7 @@ input::placeholder {
 }
 
 .btn:hover {
-    background-image: radial-gradient(ellipse farthest-corner at 50% 50%, #aca48a,rgb(148, 145, 145));
+    background-image: linear-gradient(to right, #b8b7b7 0%, #a3a1a1 100%);
 }
 .btn:focus {
     border: none;
@@ -71,6 +78,7 @@ input::placeholder {
     color: #f7f7f7;
 }
 .action:hover {
+    background: #9367d1;
     color: black;
 }
 
@@ -86,49 +94,87 @@ input::placeholder {
     content: 'Clean';
     color: black;
 }
+.clean:hover {
+    background: #c55353;
+}
 
 .equal {
     width: 160px;
     background: #ebaf94;
     border-bottom-right-radius: 5px;
 }
+.equal:hover {
+    background: #d48561;
+}
 
 .zero {
     border-bottom-left-radius: 5px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .container {
-        width: 320px;
-    }
-}
-
-/* @media (max-width: 375px) {
-    html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden;
-    }
-    .container {
-        width: 300px;
-        height: 450px;
-        margin: 30px auto;
+        width: 400px;
     }
     .btn {
-        width: 75px;
-        height: 75px;
+        width: 100px;
+        height: 100px;
     }
     input {
-        width: 280px;
-        height: 75px;
+        width: 380px;
+        height: 80px;
         padding: 10px;
         margin: 0;
     }
     .clean {
-        width: 150px;
+        width: 200px;
     }
     .equal {
-        width: 150px;
+        width: 200px;
     }
-} */
+}
+
+@media (max-width: 375px) {
+    .container {
+        margin: auto 0;
+    }
+    .btn {
+        width: 93.75px;
+        height: 93.75px;
+    }
+    input {
+        width: 355px;
+        height: 93.75px;
+        padding: 10px;
+        margin: 0;
+    }
+    .clean {
+        width: 187.5px;
+    }
+    .equal {
+        width: 187.5px;
+    }
+}
+
+@media (max-width: 325px) {
+    .container {
+        width: 100%;
+        height: 100%;
+        margin: auto 0;
+    }
+    .btn {
+        width: 25%;
+        height: 80px;
+    }
+    input {
+        width: calc(100% - 20px);
+        height: 68px;
+        padding: 10px;
+        margin: 0;
+    }
+    .clean {
+        width: 50%;
+    }
+    .equal {
+        width: 50%;
+    }
+}
