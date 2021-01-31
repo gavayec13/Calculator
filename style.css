@@ -9,13 +9,10 @@ html, body {
     margin-right: 0;
     padding: 0;
     overflow-x: hidden;
-    background: linear-gradient(-60deg, #fcbea2 0%, #caabf5 100%);
     font-size: 0;
 }
 
 .container {
-    width: 320px;
-    height: 480px;
     margin: 30px auto;
     display: table;
     border-radius: 5px;
@@ -23,10 +20,6 @@ html, body {
 }
 
 input {
-    width: 300px;
-    height: 60px;
-    margin: 0;
-    padding: 10px;
     border: none;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -47,16 +40,6 @@ input::-webkit-placeholder {
     color: #fff;
     opacity: 1;
 }
-
-.btn {
-    background-image: linear-gradient(to right, #f7f7f7 0%, #d3d3d3 100%);
-    font-family: 'Teko', sans-serif;
-    width: 80px;
-    height: 80px;
-    padding: 0;
-    font-size: 32px;
-    border: none;
-}
 .btn:hover {
     background-image: linear-gradient(to right, #b8b7b7 0%, #a3a1a1 100%);
 }
@@ -70,90 +53,14 @@ input::-webkit-placeholder {
     font-weight: 700;
     border-radius: 10px;
 }
-
-.action {
-    background: #9a78c9;
-    color: #f7f7f7;
-}
-.action:hover {
-    background: #9367d1;
-    color: black;
-}
-
-.clean {
-    width: 160px;
-    background: #b66b6b;
-    color: #f7f7f7;
-}
-.clean:hover span {
-    display: none;
-}
-.clean:hover::before {
-    content: 'Clean';
-    color: black;
-}
-.clean:hover {
-    background: #c55353;
-}
-
-.equal {
-    width: 160px;
-    background: #ebaf94;
-    border-bottom-right-radius: 5px;
-}
-.equal:hover {
-    background: #d48561;
-}
-
 .zero {
     border-bottom-left-radius: 5px;
 }
 
-@media (max-width: 1024px) {
-    .container {
-        width: 400px;
+@media only screen and (min-width: 300px) {
+    html, body {
+        background: linear-gradient(-60deg, #b7bb7d 0%, #a68dca 100%);
     }
-    .btn {
-        width: 100px;
-        height: 100px;
-    }
-    input {
-        width: 380px;
-        height: 80px;
-        padding: 10px;
-        margin: 0;
-    }
-    .clean {
-        width: 200px;
-    }
-    .equal {
-        width: 200px;
-    }
-}
-
-@media (max-width: 375px) {
-    .container {
-        margin: auto 0;
-    }
-    .btn {
-        width: 93.75px;
-        height: 93.75px;
-    }
-    input {
-        width: 355px;
-        height: 73.75px;
-        padding: 10px;
-        margin: 0;
-    }
-    .clean {
-        width: 187.5px;
-    }
-    .equal {
-        width: 187.5px;
-    }
-}
-
-@media (max-width: 325px) {
     .container {
         width: 100%;
         height: 100%;
@@ -161,11 +68,46 @@ input::-webkit-placeholder {
     }
     .btn {
         width: 25%;
-        height: 80px;
+        height: calc(100% / 7);
+        background-image: linear-gradient(to right, #cac3c3 0%, #a79191 100%);
+        font-family: 'Teko', sans-serif;
+        font-size: 28px;
+        border: none;
     }
     input {
         width: calc(100% - 20px);
-        height: 68px;
+        height: calc(100% / 7 - 20px);
+        padding: 10px;
+        margin: 0;
+    }
+    .clean {
+        width: 50%;
+        background: #ac5e5e;
+    }
+    .equal {
+        width: 50%;
+        background: #804242;
+    }
+    .action {
+        background: #6b5d1d;
+        color: #f7f7f7;
+    }
+}
+
+@media only screen and (min-width: 480px) {
+    .container {
+        width: 90%;
+        height: 70%;
+        margin: 20px auto;
+    }
+    .btn {
+        width: 25%;
+        height: calc(100% / 6);
+        font-size: 36px;
+    }
+    input {
+        width: calc(100% - 20px);
+        height: calc(100% / 6 - 20px);
         padding: 10px;
         margin: 0;
     }
@@ -174,5 +116,88 @@ input::-webkit-placeholder {
     }
     .equal {
         width: 50%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    html, body {
+        background: linear-gradient(-60deg, #fcbea2 0%, #caabf5 100%);
+    }
+    .container {
+        width: 560px;
+        height: 840px;
+        margin: 10px auto;
+    }
+    input {
+        width: 540px;
+        height: 120px;
+        padding: 10px;
+        margin: 0;
+        font-size: 44px;
+    }
+    .btn {
+        width: 140px;
+        height: 140px;
+        font-size: 48px;
+        background-image: linear-gradient(to right, #f7f7f7 0%, #d3d3d3 100%);
+    }
+  
+    .action {
+        background: #9a78c9;
+        color: #f7f7f7;
+    }
+    .action:hover {
+        background: #9367d1;
+        color: black;
+    }
+    
+    .clean {
+        width: 280px;
+        background: #b66b6b;
+        color: #f7f7f7;
+    }
+    .clean:hover span {
+        display: none;
+    }
+    .clean:hover::before {
+        content: 'Clean';
+        color: black;
+    }
+    .clean:hover {
+        background: #c55353;
+    }
+    .equal {
+        width: 280px;
+        background: #ebaf94;
+        border-bottom-right-radius: 5px;
+    }
+    .equal:hover {
+        background: #d48561;
+    }
+}
+
+@media only screen and (min-width: 1024px) and (orientation: portrait) {
+    .container {
+        width: 800px;
+        height: 1200px;
+        margin: 40px auto;
+    }
+    .btn {
+        width: 200px;
+        height: 200px;
+        font-size: 56px;
+    }
+    input {
+        width: 760px;
+        height: 160px;
+        padding: 20px;
+        margin: 0;
+        font-size: 52px;
+    }
+    .clean {
+        width: 400px;
+    }
+    .equal {
+        width: 400px;
     }
 }
