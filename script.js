@@ -12,7 +12,7 @@ document.addEventListener('keydown', Event => {
     }
 })
 
-const clean = () => input.value = input.value.slice(0,0);
+const clean = () => input.value = '';
 
 const back = () => input.value = input.value.substring(0, input.value.length-1);
 
