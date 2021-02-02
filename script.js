@@ -1,15 +1,16 @@
 const input = document.getElementById('input');
 
-const insert = num => input.value += num;
+const insert = num => {
+    (input.value.includes(num) && input.value.match(/[/*\-+\.]/)) ? null : input.value += num;
+}
 
 document.addEventListener('keydown', e => {
-    if(e.key.match(/[0-9\/*\-+\.]/)) {
-        input.value += e.key;
-    } else if(e.key.match(/Backspace/)) {
-        back();
-    } else if(e.key === 'Enter') {
-        input.value = eval(input.value);
-    }
+    (input.value.includes(e.key) && e.key.match(/[/*\-+\.]/)) ? null : (
+        (e.key.match(/[0-9\/*\-+\.]/)) ? input.value += e.key : (
+            (e.key.match(/Backspace/)) ? back() : (
+                (e.key === 'Enter') ? input.value = eval(input.value) : null)
+        )
+    );
 })
 
 const clean = () => input.value = '';
