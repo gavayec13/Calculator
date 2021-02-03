@@ -1,7 +1,7 @@
 const input = document.getElementById('input');
 
 const insert = num => {
-    (input.value.includes(num) && input.value.match(/[/*\-+\.]/)) ? null : input.value += num;
+    (input.value.includes(num) && num.match(/[/*\-+\.]/)) ? null : input.value += num;
 }
 
 document.addEventListener('keydown', e => {
