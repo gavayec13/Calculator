@@ -5,6 +5,8 @@
 
 html, body {
     height: 100%;
+    display: flexbox;
+    justify-content: space-between;
     margin-left: calc(100vw - 100%);
     margin-right: 0;
     padding: 0;
@@ -12,9 +14,30 @@ html, body {
     font-size: 0;
 }
 
+body.dark {
+    background: linear-gradient(-60deg, #b7bb7d 0%, #a68dca 100%);
+
+}
+
+.mode {
+    width: 500px;
+    height: 100px;
+    margin: 20px auto;
+    border: 1px solid black;
+}
+#darkMode {
+    width: 200px;
+    height: 70px;
+    border-radius: 10px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.75);
+}
+
 .container {
-    margin: 30px auto;
-    display: table;
+    margin: 30px ;
+    display: flexbox;
     border-radius: 5px;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.75);
 }
@@ -180,7 +203,7 @@ input::-webkit-placeholder {
     .container {
         width: 800px;
         height: 1200px;
-        margin: 40px auto;
+        margin: 40px ;
     }
     .btn {
         width: 200px;
