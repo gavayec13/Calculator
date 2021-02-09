@@ -1,23 +1,45 @@
-const input = document.getElementById('input');
+const digitBtns = document.querySelectorAll('.digit');
+const actionBtns = document.querySelectorAll('.action');
 
-const insert = num => {
-    (input.value.includes(num) && num.match(/[/*\-+\.]/)) ? null : input.value += num;
-}
-
-document.addEventListener('keydown', e => {
-    (input.value.includes(e.key) && e.key.match(/[/*\-+\.]/)) ? null : (
-        (e.key.match(/[0-9\/*\-+\.]/)) ? input.value += e.key : (
-            (e.key.match(/Backspace/)) ? back() : (
-                (e.key === 'Enter') ? input.value = eval(input.value) : null)
-        )
-    );
+digitBtns.forEach(btn => {
+    btn.addEventListener('click', e => {
+        calcInput.value += e.target.innerHTML;
+    })
 })
 
-const clean = () => input.value = '';
+actionBtns.forEach(btn => {
+    btn.addEventListener('click', e => {
+        if(!calcInput.value[calcInput.value.length-1].match(/[/*\-+\.]/)) {
+            calcInput.value += e.target.innerHTML;
+        }
+    })
+})
 
-const back = () => input.value = input.value.substring(0, input.value.length-1);
+document.addEventListener('keydown', e => {
+    if(calcInput.value === '' && (e.key.match(/[0-9]/))) {
+        calcInput.value = e.key;
+    } else if(e.key === 'Backspace') {
+        calcInput.value = calcInput.value.substring(0, calcInput.value.length-1);
+    } else if(e.key === 'Enter') {
+        calcInput.value = eval(calcInput.value);
+    } else if(calcInput.value[calcInput.value.length-1].match(/[/*\-+\.]/) && (e.key.match(/[/*\-+\.]/))) {
+        null;
+    } else if(e.key.match(/[0-9\/*\-+\.]/)) {
+        calcInput.value += e.key;
+    }
+})
 
-const equal = () => input.value ? input.value = eval(input.value) : null;
+cleanBtn.addEventListener('click', e => {
+    calcInput.value = '';
+})
+
+backBtn.addEventListener('click', e => {
+    calcInput.value = calcInput.value.substring(0, calcInput.value.length-1);
+})
+
+equalBtn.addEventListener('click', e => {
+    calcInput.value = eval(calcInput.value);
+})
 
 
 if(!localStorage.theme) localStorage.theme = 'light'
