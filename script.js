@@ -16,7 +16,7 @@ actionBtns.forEach(btn => {
 })
 
 document.addEventListener('keydown', e => {
-    if(calcInput.value === '' && (e.key.match(/[0-9]/))) {
+    if(calcInput.value === '' && (e.key.match(/[0-9\.]/))) {
         calcInput.value = e.key;
     } else if(e.key === 'Backspace') {
         calcInput.value = calcInput.value.substring(0, calcInput.value.length-1);
@@ -33,9 +33,9 @@ cleanBtn.addEventListener('click', e => {
     calcInput.value = '';
 })
 
-backBtn.addEventListener('click', e => {
+backBtn.onclick = () => {
     calcInput.value = calcInput.value.substring(0, calcInput.value.length-1);
-})
+}
 
 equalBtn.addEventListener('click', e => {
     calcInput.value = eval(calcInput.value);
@@ -45,8 +45,10 @@ equalBtn.addEventListener('click', e => {
 if(!localStorage.theme) localStorage.theme = 'light'
 document.body.className = localStorage.theme
 darkModeBtn.onclick = () => {
-    console.log('click mode button');
+    
     document.body.classList.toggle('dark');
-    darkModeBtn.innerText = document.body.classList.contains('dark') ? 'DARK' : 'LIGHT';
+    console.log(document.querySelectorAll('equalBtn').classList);
+    document.getElementsByClassName('digit').style.backgroundColor
+    darkModeBtn.innerText = document.body.classList.contains('dark') ? 'LIGHT' : 'DARK';
     localStorage.theme = document.body.className || 'light';
 }
