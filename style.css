@@ -33,6 +33,10 @@ body.dark {
     display: flex;
     justify-content: center;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.75);
+    transition: all 1s;
+}
+#darkModeBtn:hover {
+    transform: scale(1.1);
 }
 
 .container {
@@ -63,7 +67,7 @@ input::-webkit-placeholder {
     color: #fff;
     opacity: 1;
 }
-.btn:hover {
+.digit:hover {
     background-image: linear-gradient(to right, #b8b7b7 0%, #a3a1a1 100%);
 }
 .btn:focus {
@@ -97,10 +101,17 @@ input::-webkit-placeholder {
         font-family: 'Teko', sans-serif;
         font-size: 28px;
         border: none;
+        transition: all 1s;
+    }
+    .btn:hover {
+        color: white;
     }
     .darkDigitBtn {
         color: #cac3c3;
         background-image: linear-gradient(to right, #634e4e 0%, #927575 100%);
+    }
+    .darkDigitBtn:hover {
+        color : black;
     }
     input {
         width: calc(100% - 20px);
@@ -119,24 +130,49 @@ input::-webkit-placeholder {
         width: 50%;
         background: #ac5e5e;
     }
+    .clean:hover span {
+        display: none;
+    }
+    .clean:hover::before {
+        content: 'Clean';
+        color: black;
+    }
+    .clean:hover {
+        background: #c55353;
+    }
     .back {
         background: #974040;
+    }
+    .back:hover {
+        background: #b94a4a;
     }
     .equal {
         width: 50%;
         background: #974040;
     }
+    .equal:hover {
+        background: #b94a4a;
+    }
     .action {
         background: #6b5d1d;
         color: black;
+    }
+    .action:hover {
+        background: #4e451e;
     }
     .darkAction {
         background: #61572a;
         color: #f7f7f7;
     }
+    .darkAction:hover {
+        color: black;
+    }
     .darkBackEqual {
         background: #804242;
         color: #f7f7f7;
+    }
+    .darkBackEqual:hover {
+        color: black;
     }
 }
 
@@ -196,11 +232,11 @@ input::-webkit-placeholder {
    
     .action {
         background: #9a78c9;
-        color: #f7f7f7;
+        color: black;
     }
     .action:hover {
         background: #9367d1;
-        color: black;
+        
     }
     
     .clean {
@@ -208,18 +244,12 @@ input::-webkit-placeholder {
         background: #b66b6b;
         color: #f7f7f7;
     }
-    .clean:hover span {
-        display: none;
-    }
-    .clean:hover::before {
-        content: 'Clean';
-        color: black;
-    }
-    .clean:hover {
-        background: #c55353;
-    }
+
     .back {
         background: #ebaf94;
+    }
+    .back:hover {
+        background: #d48561;
     }
     .equal {
         width: 280px;

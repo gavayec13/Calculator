@@ -20,8 +20,8 @@ document.addEventListener('keydown', e => {
         calcInput.value = e.key;
     } else if(e.key === 'Backspace') {
         calcInput.value = calcInput.value.substring(0, calcInput.value.length-1);
-    } else if(e.key === 'Enter' && calcInput.value !== '') {
-        calcInput.value = eval(calcInput.value);
+    } else if(e.key === 'Enter' && calcInput.value) {
+        calcInput.value ? calcInput.value = eval(calcInput.value): null;
     } else if(calcInput.value[calcInput.value.length-1].match(/[/*\-+\.]/) && (e.key.match(/[/*\-+\.]/))) {
         null;
     } else if (calcInput.value[calcInput.value.length-1].match(/[/*\-+\.]/) && e.key === 'Enter') {
@@ -41,7 +41,7 @@ backBtn.onclick = () => {
 }
 
 equalBtn.onclick = () => {
-    calcInput.value = eval(calcInput.value);
+    calcInput.value ? calcInput.value = eval(calcInput.value): null;
 }
 
 
