@@ -20,35 +20,60 @@ document.addEventListener('keydown', e => {
         calcInput.value = e.key;
     } else if(e.key === 'Backspace') {
         calcInput.value = calcInput.value.substring(0, calcInput.value.length-1);
-    } else if(e.key === 'Enter') {
+    } else if(e.key === 'Enter' && calcInput.value !== '') {
         calcInput.value = eval(calcInput.value);
     } else if(calcInput.value[calcInput.value.length-1].match(/[/*\-+\.]/) && (e.key.match(/[/*\-+\.]/))) {
         null;
+    } else if (calcInput.value[calcInput.value.length-1].match(/[/*\-+\.]/) && e.key === 'Enter') {
+        calcInput.value = calcInput.value.substring(0, calcInput.value.length-1);
+        //calcInput.value = eval(calcInput.value);
     } else if(e.key.match(/[0-9\/*\-+\.]/)) {
         calcInput.value += e.key;
     }
 })
 
-cleanBtn.addEventListener('click', e => {
+cleanBtn.onclick = () => {
     calcInput.value = '';
-})
+}
 
 backBtn.onclick = () => {
     calcInput.value = calcInput.value.substring(0, calcInput.value.length-1);
 }
 
-equalBtn.addEventListener('click', e => {
+equalBtn.onclick = () => {
     calcInput.value = eval(calcInput.value);
-})
+}
 
 
-if(!localStorage.theme) localStorage.theme = 'light'
-document.body.className = localStorage.theme
+// if(!localStorage.theme) localStorage.theme = 'light';
+// document.body.className = localStorage.theme;
+
 darkModeBtn.onclick = () => {
+    const bodyClass = document.body.classList;
+    const digit = document.querySelectorAll('.digit');
+    const action = document.querySelectorAll('.action');
+    const equal = document.querySelector('.equal');
+    const back = document.querySelector('.back');
+
+    bodyClass.toggle('dark');
+
+    if(!bodyClass.contains('dark')) {
+        for(el of digit) el.classList.remove('darkDigitBtn');
+        for(el of action) el.classList.remove('darkAction');
+        darkModeBtn.classList.remove('darkDigitBtn');
+        equal.classList.remove('darkBackEqual');
+        back.classList.remove('darkBackEqual');
+        calcInput.classList.remove('darkInput');
+        darkModeBtn.innerText = 'DARK';
+    } else {
+        for(el of digit) el.classList.add('darkDigitBtn');
+        for(el of action) el.classList.add('darkAction');
+        darkModeBtn.classList.add('darkDigitBtn');
+        equal.classList.add('darkBackEqual');
+        back.classList.add('darkBackEqual');
+        calcInput.classList.add('darkInput');
+        darkModeBtn.innerText = 'LIGHT';
+    }
     
-    document.body.classList.toggle('dark');
-    console.log(document.querySelectorAll('equalBtn').classList);
-    document.getElementsByClassName('digit').style.backgroundColor
-    darkModeBtn.innerText = document.body.classList.contains('dark') ? 'LIGHT' : 'DARK';
-    localStorage.theme = document.body.className || 'light';
+    //localStorage.theme = document.body.className || 'light';
 }
