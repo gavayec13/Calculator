@@ -26,7 +26,6 @@ document.addEventListener('keydown', e => {
         null;
     } else if (calcInput.value[calcInput.value.length-1].match(/[/*\-+\.]/) && e.key === 'Enter') {
         calcInput.value = calcInput.value.substring(0, calcInput.value.length-1);
-        //calcInput.value = eval(calcInput.value);
     } else if(e.key.match(/[0-9\/*\-+\.]/)) {
         calcInput.value += e.key;
     }
@@ -74,6 +73,5 @@ darkModeBtn.onclick = () => {
         calcInput.classList.add('darkInput');
         darkModeBtn.innerText = 'LIGHT';
     }
-    
     //localStorage.theme = document.body.className || 'light';
 }
